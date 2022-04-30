@@ -23,10 +23,10 @@ jobs:
           registry-url: 'https://registry.npmjs.org'
 
       - name: "Install dependencies"
-        run: npm install
+        run: npm install && npm update
 
       - name: "Build scripts"
-        run: npm run build
+        run: npm install --save-dev @workadventure/iframe-api-typings && npm run build
 
       - name: "Move scripts"
         run: mv dist/* .
@@ -40,12 +40,11 @@ jobs:
           git checkout master
           git add .
           git commit -am "Adding files"
-
       - name: Deploy
         uses: JamesIves/github-pages-deploy-action@releases/v3
         if: github.ref == 'refs/heads/master'
         with:
-          GITHUB_TOKEN: ${{ secrets.GIT_TOKEN }}
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           BRANCH: gh-pages # The branch the action should deploy to.
           FOLDER: . # The folder the action should deploy.
           BASE_BRANCH: master
