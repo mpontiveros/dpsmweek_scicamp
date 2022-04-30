@@ -23,10 +23,10 @@ jobs:
           registry-url: 'https://registry.npmjs.org'
 
       - name: "Install dependencies"
-        run: npm install
+        run: npm install && npm update
 
       - name: "Build scripts"
-        run: npm run build
+        run: npm install --save-dev @workadventure/iframe-api-typings && npm run build
 
       - name: "Move scripts"
         run: mv dist/* .
@@ -40,7 +40,6 @@ jobs:
           git checkout master
           git add .
           git commit -am "Adding files"
-
       - name: Deploy
         uses: JamesIves/github-pages-deploy-action@releases/v3
         if: github.ref == 'refs/heads/master'
