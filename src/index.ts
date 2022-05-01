@@ -27,7 +27,18 @@ WA.onInit().then(() => {
                     }
                 }
             ]        
-        }
+        },
+        {
+            zone: 'followUs',
+            message: 'Love what you are seeing?',
+            cta: [
+                {
+                    label: 'Like our Facebook Page‎',
+                    className: 'primary',
+                    callback: () => WA.nav.openTab('https://web.facebook.com/DPSM.CAS.UPM'),
+                },
+            ]
+        },
     ]
 
     WA.ui.registerMenuCommand("Tutorial", () => {
@@ -40,6 +51,12 @@ WA.onInit().then(() => {
     });
     WA.room.onLeaveZone('unoHelp', closePopUp)
     
+    WA.room.onEnterZone('followUs', () => {
+        currentZone = 'followUs'
+        openPopup(currentZone, currentZone + 'Popup')
+    });
+    WA.room.onLeaveZone('followUs', closePopUp)
+
     
     // The line below bootstraps the Scripting API Extra library that adds a number of advanced properties/features to WorkAdventure
     bootstrapExtra().then(() => {
