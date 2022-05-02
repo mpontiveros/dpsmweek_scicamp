@@ -45,6 +45,11 @@ WA.onInit().then(() => {
         WA.nav.openTab('https://www.canva.com/design/DAEl4ixLWKA/watch?embed')
     })
 
+    WA.ui.registerMenuCommand("Post to Community Board", () => {
+        WA.nav.openTab('https://padlet.com/embed/8zfe6tkznhlpexon')
+    })
+
+
     WA.room.onEnterZone('unoHelp', () => {
         currentZone = 'unoHelp'
         openPopup(currentZone, currentZone + 'Popup')
