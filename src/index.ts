@@ -39,6 +39,17 @@ WA.onInit().then(() => {
                 },
             ]
         },
+        {
+            zone: 'S1Site',
+            message: 'S1 is sharing a website! Would you like to see?',
+            cta: [
+                {
+                    label: 'Sure!',
+                    className: 'primary',
+                    callback: () => WA.nav.openTab('https://sites.google.com/up.edu.ph/weaving-mathematics/home?authuser=0'),
+                },
+            ]
+        },
     ]
 
     WA.ui.registerMenuCommand("Tutorial", () => {
@@ -62,6 +73,11 @@ WA.onInit().then(() => {
     });
     WA.room.onLeaveZone('followUs', closePopUp)
 
+    WA.room.onEnterZone('S1Site', () => {
+        currentZone = 'S1Site'
+        openPopup(currentZone, currentZone + 'Popup')
+    });
+    WA.room.onLeaveZone('S1Site', closePopUp)
     
     // The line below bootstraps the Scripting API Extra library that adds a number of advanced properties/features to WorkAdventure
     bootstrapExtra().then(() => {
