@@ -50,6 +50,17 @@ WA.onInit().then(() => {
                 },
             ]
         },
+        {
+            zone: 'S2Site',
+            message: 'S2 is sharing a result from their work! Would you like to see?',
+            cta: [
+                {
+                    label: 'Sure!',
+                    className: 'primary',
+                    callback: () => WA.nav.openTab('https://www.canva.com/design/DAE_ujoeYo8/view?embed'),
+                },
+            ]
+        },
     ]
 
     WA.ui.registerMenuCommand("Post to Community Board", () => {
