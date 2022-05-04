@@ -52,13 +52,15 @@ WA.onInit().then(() => {
         },
     ]
 
-    WA.ui.registerMenuCommand("Tutorial", () => {
-        WA.nav.openTab('https://www.canva.com/design/DAEl4ixLWKA/watch?embed')
-    })
-
     WA.ui.registerMenuCommand("Post to Community Board", () => {
         WA.nav.openTab('https://padlet.com/embed/8zfe6tkznhlpexon')
     })
+
+    WA.ui.registerMenuCommand("Vote for Best Booth", () => {
+        WA.nav.openTab('https://docs.google.com/forms/d/e/1FAIpQLSfukx1sY8GsjftP6Qmkj4xEdZsUGUseXPEPm_d8kABT817OHQ/viewform')
+    })
+
+    
 
 
     WA.room.onEnterZone('unoHelp', () => {
