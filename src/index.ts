@@ -64,14 +64,16 @@ WA.onInit().then(() => {
     ]
 
     WA.ui.registerMenuCommand("Post to Community Board", () => {
-        WA.nav.openTab('https://padlet.com/embed/8zfe6tkznhlpexon')
+        WA.nav.openTab('https://padlet.com/mcpontiveros/8zfe6tkznhlpexon')
     })
 
     WA.ui.registerMenuCommand("Vote for Best Booth", () => {
         WA.nav.openTab('https://docs.google.com/forms/d/e/1FAIpQLSfukx1sY8GsjftP6Qmkj4xEdZsUGUseXPEPm_d8kABT817OHQ/viewform')
     })
 
-    
+    WA.ui.registerMenuCommand("Ask Student Presenters for Questions", () => {
+        WA.nav.openTab('https://padlet.com/mcpontiveros/pzjz9003bwuj8w0v')
+    })
 
 
     WA.room.onEnterZone('unoHelp', () => {
